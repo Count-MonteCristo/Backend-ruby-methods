@@ -1,6 +1,8 @@
 def do_calc
-    yield 7, 9
-end
+    result = yield 7, 9
+    puts result
+  end
+  
+  do_calc {|i, j| i + j}
+  do_calc {|i, j| i * j}
     
-do_calc {|i, j| puts i + j}
-do_calc {|i, j| puts i * j}

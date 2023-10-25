@@ -1,16 +1,15 @@
 def hangman(string, array)
-    included_letter = []
-    phrase = string.split('')
+    result = ''
     
-    phrase.each do |letter|
+    string.each_char do |letter|
       if array.include?(letter)
-          included_letter.push(letter)
+          result += letter
       else
-          included_letter.push("_")   
+          result += "_"
       end
     end
     
-    return included_letter
+    return result
 end
   
-puts hangman("ghost",["g","t","s"]) 
+puts hangman("ghost",["g","t","s"])
